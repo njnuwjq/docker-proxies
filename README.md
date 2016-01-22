@@ -1,5 +1,4 @@
 # Docker-Proxies
-[![Build Status](https://travis-ci.org/gitchs/docker-proxies.svg?branch=master)](https://travis-ci.org/gitchs/docker-proxies)
 
 ## Description
 1. startup sslocal as a local socks5 proxy server.
