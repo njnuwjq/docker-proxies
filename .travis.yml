@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+  - docker
+
+before_script:
+  - docker login -e "${DOCKER_EMAIL}" -u "${DOCKER_USER}" -p "${DOCKER_PASSWORD}"
+
+script:
+  - docker build -t tinyproxy/proxies ./
+
+after_success:
+  - docker push tinyproxy/proxies
