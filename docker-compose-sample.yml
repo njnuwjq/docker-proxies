@@ -1,0 +1,12 @@
+proxies:
+  build: ./
+  environment:
+    - "SHADOWSOCKS_SERVER="
+    - "SHADOWSOCKS_PORT="
+    - "SHADOWSOCKS_CIPHER=aes-256-cfb"
+    - "SHADOWSOCKS_PASSWORD="
+    - "SHADOWSOCKS_TIMEOUT=300"
+    - "SHADOWSOCKS_FAST_OPEN_ENABLE=true"
+  ports:
+    - "1080"
+    - "8123"
