@@ -1,4 +1,4 @@
-FROM python:2.7.10
+FROM golang:1.8
 MAINTAINER tinyproxy <tinyproxy@gmail.com>
 
 # shadowsocks settings
@@ -7,10 +7,9 @@ ENV SHADOWSOCKS_PORT=""
 ENV SHADOWSOCKS_CIPHER="aes-256-cfb"
 ENV SHADOWSOCKS_PASSWORD=""
 ENV SHADOWSOCKS_TIMEOUT="300"
-ENV SHADOWSOCKS_FAST_OPEN_ENABLE="true"
 # shadowsocks settings end
 
-RUN pip install shadowsocks
+RUN go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-local
 RUN apt-get update
 RUN apt-get install -y polipo supervisor
 EXPOSE 8123

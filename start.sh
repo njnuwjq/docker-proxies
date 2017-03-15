@@ -9,18 +9,13 @@
 
 function START_SSLOCAL {
     echo "start sslocal"
-    FAST_OPEN_OPTION=""
-    if [ "${SHADOWSOCKS_FAST_OPEN_ENABLE}" = "true" ];then
-        FAST_OPEN_OPTION="--fast-open"
-    fi
-    SSLOCAL=$(which sslocal)
+    SSLOCAL=$(which shadowsocks-local)
     ${SSLOCAL} \
         -s "${SHADOWSOCKS_SERVER}" \
         -p "${SHADOWSOCKS_PORT}" \
         -m "${SHADOWSOCKS_CIPHER}" \
         -k "${SHADOWSOCKS_PASSWORD}" \
         -t "${SHADOWSOCKS_TIMEOUT}" \
-        ${FAST_OPEN_OPTION} \
         -l "1080" -b "0.0.0.0"
 
 }
